@@ -2,5 +2,3 @@
 
 **Team Name:** sqrt(AI^2), aka $\sqrt{\text{AI}^2}$\
 **Game:** Simplified Brawhala
-
-Can I push this?
