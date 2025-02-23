@@ -17,8 +17,11 @@ def vert_danger_zone_reward(
     player: Player = env.objects["player"]
     reward = 0
 
+    stage_top = env.stage_height_tiles / 2
+    stage_bottom = -env.stage_height_tiles / 2
+
     # Apply penalty if the player is in the danger zone
-    if player.body.position.y >= 4.5 or player.body.position.y <= -15:
+    if player.body.position.y >= (stage_top * 0.8) or player.body.position.y <= (stage_bottom * 0.8):
         reward -= zone_penalty
 
     return reward * env.dt
@@ -39,10 +42,14 @@ def hori_danger_zone_reward(
     """
     # Get player object from the environment
     player: Player = env.objects["player"]
+    reward = 0
+
+    stage_right = env.stage_width_tiles / 2
+    stage_left = -env.stage_width_tiles / 2
 
     # Apply penalty if the player is in the danger zone
-    r# Apply penalty if the player is in the danger zone
-    if player.body.position.x >= 16 or player.body.position.x <= -16:
+    # Apply penalty if the player is in the danger zone
+    if player.body.position.x >= (stage_right * 0.8) or player.body.position.x <= (stage_left * 0.8):
         reward -= zone_penalty
 
     return reward * env.dt
