@@ -33,5 +33,12 @@ def damage_interaction_reward(
         reward = -damage_taken
     else:
         raise ValueError(f"Invalid mode: {mode}")
+    
+    # Stun Consideration
+    if opponent.state == opponent.states['stun'] and reward > 0:
+        reward *= 1.5
+    
+    if player.state == player.states['stun'] and reward < 0:
+        reward *= 1.5
 
     return reward / 140
