@@ -1,4 +1,4 @@
-def damage_interaction_reward(
+def edge_guarding_reward(
     env: WarehouseBrawl,
     mode: RewardMode = RewardMode.SYMMETRIC,
 ) -> float:
