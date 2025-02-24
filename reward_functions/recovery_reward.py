@@ -12,6 +12,7 @@ def recovery_reward(
     """
     # Get player object from the environment
     player: Player = env.objects["player"]
+    opponent: Player = env.objects["opponent"]
     reward = 0
 
     player_recovering = (
