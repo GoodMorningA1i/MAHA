@@ -1,44 +1,66 @@
-def damage_interaction_reward(
+def opponent_offstage_reward(
     env: WarehouseBrawl,
-    mode: RewardMode = RewardMode.SYMMETRIC,
+    zone_penalty: int = 1
 ) -> float:
     """
-    Computes the reward based on damage interactions between players.
-
-    Modes:
-    - ASYMMETRIC_OFFENSIVE (0): Reward is based only on damage dealt to the opponent
-    - SYMMETRIC (1): Reward is based on both dealing damage to the opponent and avoiding damage
-    - ASYMMETRIC_DEFENSIVE (2): Reward is based only on avoiding damage
+    A reward for keeping opponent off of the stage
 
     Args:
-        env (WarehouseBrawl): The game environment
-        mode (DamageRewardMode): Reward mode, one of DamageRewardMode
-
+        env (WarehouseBrawl): The game environment.
+        zone_penalty (int): The penalty applied when the player is in the danger zone.
     Returns:
-        float: The computed reward.
+        float: The computed penalty as a tensor.
     """
-    # Getting player and opponent from the enviornment
+    # Get player object from the environment
     player: Player = env.objects["player"]
     opponent: Player = env.objects["opponent"]
+    reward = 0
 
-    # Reward dependent on the mode
-    damage_taken = player.damage_taken_this_frame
-    damage_dealt = opponent.damage_taken_this_frame
+    if isinstance(opponent.state, InAirState):
+        reward += zone_penalty / 10
+        stage_right = env.stage_width_tiles / 2
 
-    if mode == RewardMode.ASYMMETRIC_OFFENSIVE:
-        reward = damage_dealt
-    elif mode == RewardMode.SYMMETRIC:
-        reward = damage_dealt - damage_taken
-    elif mode == RewardMode.ASYMMETRIC_DEFENSIVE:
-        reward = -damage_taken
-    else:
-        raise ValueError(f"Invalid mode: {mode}")
+        multiplier = 1
+
+        if abs(opponent.body.position.x) > (0.8 * stage_right):
+            multiplier *= 1.5
+        
+        multiplier *= abs(opponent.prev_x) / abs(opponent.body.position.x)
+
+        reward = multiplier * (zone_penalty / 5)
     
-    # Stun Consideration
-    if opponent.state == opponent.states['stun'] and reward > 0:
-        reward *= 1.5
-    
-    if player.state == player.states['stun'] and reward < 0:
-        reward *= 1.5
+    return reward * env.dt
 
-    return reward / 140
+def gaurd_reward(
+    env: WarehouseBrawl,
+    zone_penalty: int = 1
+) -> float:
+    """
+    A reward for keeping opponent airborne
+
+    Args:
+        env (WarehouseBrawl): The game environment.
+        zone_penalty (int): The penalty applied when the player is in the danger zone.
+    Returns:
+        float: The computed penalty as a tensor.
+    """
+    # Get player object from the environment
+    player: Player = env.objects["player"]
+    opponent: Player = env.objects["opponent"]
+    reward = 0
+    multiplier = 1
+
+    opponent_recovering = (
+        opponent.body.velocity.x < 0 and opponent.body.position.x > 0 or 
+        opponent.body.velocity.x > 0 and opponent.body.position.x < 0 or
+        opponent.body.velocity.y < 0 and opponent.body.position.y > 0 or 
+        opponent.body.velocity.y > 0 and opponent.body.position.y < 0
+    )
+
+    if isinstance(player.state, AttackingState) and opponent_recovering:
+        multipler *= 1.5
+    
+    if isinstance(player.state, InAirState):
+        multiplier *= 0.8
+    
+    return reward * multiplier * env.dt
