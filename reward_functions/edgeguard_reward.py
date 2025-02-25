@@ -15,11 +15,9 @@ def opponent_offstage_reward(
     player: Player = env.objects["player"]
     opponent: Player = env.objects["opponent"]
     reward = 0
-
     if isinstance(opponent.state, InAirState):
         reward += zone_penalty / 10
         stage_right = env.stage_width_tiles / 2
-
         multiplier = 1
 
         if abs(opponent.body.position.x) > (0.8 * stage_right):
@@ -31,7 +29,7 @@ def opponent_offstage_reward(
     
     return reward * env.dt
 
-def gaurd_reward(
+def guard_reward(
     env: WarehouseBrawl,
     zone_penalty: int = 1
 ) -> float:
@@ -57,10 +55,8 @@ def gaurd_reward(
         opponent.body.velocity.y > 0 and opponent.body.position.y < 0
     )
 
-    if isinstance(player.state, AttackingState) and opponent_recovering:
-        multipler *= 1.5
-    
+    if isinstance(player.state, AttackState) and opponent_recovering:
+        multiplier *= 1.5
     if isinstance(player.state, InAirState):
-        multiplier *= 0.8
-    
+        multiplier *= 0.
     return reward * multiplier * env.dt
