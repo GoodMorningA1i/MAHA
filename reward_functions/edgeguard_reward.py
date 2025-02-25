@@ -15,6 +15,7 @@ def opponent_offstage_reward(
     player: Player = env.objects["player"]
     opponent: Player = env.objects["opponent"]
     reward = 0
+    
     if isinstance(opponent.state, InAirState):
         reward += zone_penalty / 10
         stage_right = env.stage_width_tiles / 2
