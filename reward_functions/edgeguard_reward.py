@@ -58,8 +58,8 @@ def guard_reward(
 
     if isinstance(player.state, AttackState) and opponent_recovering:
         multiplier *= 1.5
-
+    
     if isinstance(player.state, InAirState):
         multiplier *= 0.8
-
+    
     return reward * multiplier * env.dt
