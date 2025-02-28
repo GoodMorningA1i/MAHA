@@ -25,5 +25,6 @@ cd environment
 python3.10 action_space_helper.py
 python3.10 observation_space_helper.py
 python3.10 key_icon_panel.py
+python3.10 ui_handler.py
 
 cd ..
