@@ -3,6 +3,11 @@
 **Team Name:** $\sqrt{\text{AI}^2}$\
 **Game:** Simplified Brawhala
 
+
+<img width="716" alt="Screenshot 2025-02-28 at 5 55 07 AM" src="https://github.com/user-attachments/assets/9a4171e3-bb51-421c-ad72-86d8f648350b" />
+
+
+
 ## Purpose
 
 The AI² Tournament is run by the University of Toronto Machine Intelligence Student Team, UTMIST. The tournament centers around designing and training a reinforcement learning agent in a smash-bros style platformer fighting game, inspired from the game Brawhala.
