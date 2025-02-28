@@ -37,5 +37,41 @@ To deactivate, run `deactivate`.
 
 ## Reward Functions
 
+In order to design the model, we came up with six new reward functions, while modifying two existing reward functions.
+
+### New reward functions
+
+#### Danger Zone Rewards
+hori_danger_zone reward: This penalizes the agent for moving too far to the right or left of the stage 
+vert_danger_zone reward: This penalizes the agent for moving too close to the ceiling or the ground of the stage
+
+#### Recovery Reward
+This reward function is aimed to promote recovery behavior in the agent
+What the function does is that:
+- If the agent is too far to the right, then it rewards the agent for moving to the left and penalizes it for moving to the right
+- If the agent is too far to the left, then it rewards the agent for moving to the right and penalizes it for moving to the left
+The same principle is used for vertical movements
+
+#### Dodge Reward
+Gives a reward each time we go into a dodge state when the opponent is in an attack state
+
+#### Edgeguarding Rewards
+These are rewards functions aimed to promote edgeguarding. We hope that the below rewards, in conjunction with the move_to_opponent function, will promote edge_gaurding
+- opponent_offstage_reward: Rewards the agent each time the opposing agent is offstage
+- guard_reward: Rewards the agent for being in an attacking state when the opponent is recovering.
+
+### Modified reward functions
+
+#### on_knockout_reward
+We modified knockout_reward to reward the agent more the more stocks it takes– e.g. the agent is rewarded more if it takes the opponents second stock then if it takes the first stock. Similarly, we penalized the agent more the more stocks it loses
+
+#### damage_interac_reward
+We modified this functions in the following way
+- For the first half of the match, the reward is damage dealt - damage taken
+- For the second half of the match
+  - If the agent has a stock advantage over the opponent, it is only rewarded based on -damage_taken, which aims to promote behavior like guarding the agent’s remaining stock so it can win by timeout
+  - If the agent has less stocks, or the same number of stocks, the reward is based on damage_dealt– this wants to promote aggressive behaviour in the agent, and beat the other agent down as soon as possible
+
+
 ## Skills Needed
 Python and its packages, APIs, Reinforcement Learning, Git-flow, DevOps and Rulesets, Pull Requests, Linux and Shell Script, Virtual Environments
