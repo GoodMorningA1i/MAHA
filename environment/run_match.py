@@ -1,5 +1,7 @@
 from stable_baselines3.common.vec_env import DummyVecEnv
 from tqdm import tqdm
+import camera
+from camera import CameraResolution
 
 def run_match(agent_1: Agent | partial,
               agent_2: Agent | partial,

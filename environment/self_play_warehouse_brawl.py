@@ -1,4 +1,8 @@
 import gymnasium
+import camera
+from camera import CameraResolution
+import save
+from save import OpponentsCfg
 
 class SelfPlayWarehouseBrawl(gymnasium.Env):
     """Custom Environment that follows gym interface."""

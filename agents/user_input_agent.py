@@ -1,4 +1,6 @@
 import pygame
+import agent_classes
+from agent_classes import Agent
 
 class UserInputAgent(Agent):
 

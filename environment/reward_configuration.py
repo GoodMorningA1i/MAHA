@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field, MISSING
 from typing import Callable
+import torch
 
 @dataclass
 class RewTerm():

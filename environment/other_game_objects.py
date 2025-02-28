@@ -35,6 +35,9 @@ import skvideo
 import skvideo.io
 from IPython.display import Video
 
+import camera
+from camera import Camera
+
 class GameObject(ABC):
 
     def render(self, canvas: pygame.Surface, camera: Camera) -> None:

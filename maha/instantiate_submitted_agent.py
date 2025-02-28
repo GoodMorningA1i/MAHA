@@ -1,5 +1,7 @@
 import submitted_agent
 from submitted_agent import SubmittedAgent
+import camera
+from camera import CameraResolution
 
 my_agent = SubmittedAgent()
 my_agent2 = SubmittedAgent()

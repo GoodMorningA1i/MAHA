@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Optional
+import gymnasium
+from gymnasium import spaces
 
 class Agent(ABC):
 

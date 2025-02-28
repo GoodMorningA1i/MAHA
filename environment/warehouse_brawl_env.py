@@ -35,7 +35,10 @@ import skvideo
 import skvideo.io
 from IPython.display import Video
 
-import MalachiteEnv
+import malachite
+from malachite import MalachiteEnv
+import camera
+from camera import CameraResolution
 
 class Signal():
     def __init__(self, env):
