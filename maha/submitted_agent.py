@@ -26,7 +26,7 @@ class SubmittedAgent(Agent):
         if not os.path.isfile(data_path):
             print(f"Downloading {data_path}...")
             # Place a link to your PUBLIC model data here. This is where we will download it from on the tournament server.
-            url = "https://drive.google.com/file/d/1G60ilYtohdmXsYyjBtwdzC1PRBerqpfJ/view?usp=sharing"
+            url = "https://drive.google.com/file/d/18wGZEkc50GSVJruuKP9OTlaNaxXOvatx/view?usp=sharing"
             gdown.download(url, output=data_path, fuzzy=True)
         return data_path
 
@@ -45,11 +45,3 @@ class SubmittedAgent(Agent):
         self.model.set_env(env)
         self.model.verbose = verbose
         self.model.learn(total_timesteps=total_timesteps, log_interval=log_interval)
-
-# Create my agent
-# Use SubmittedAgent(file_path='data.zip')
-my_agent = SubmittedAgent()
-my_agent2 = SubmittedAgent()
-#my_agent = RecurrentPPOAgent('recurrent')
-run_match(my_agent, my_agent2, video_path='vis.mp4', resolution=CameraResolution.LOW)
-Video('vis.mp4', embed=True, width=800)
