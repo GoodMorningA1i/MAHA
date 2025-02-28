@@ -1,3 +1,5 @@
+from enum import Enum
+
 class CameraResolution(Enum):
     LOW = 1
     MEDIUM = 2

@@ -1,3 +1,5 @@
+import gymnasium
+
 class SelfPlayWarehouseBrawl(gymnasium.Env):
     """Custom Environment that follows gym interface."""
 

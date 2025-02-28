@@ -1701,7 +1701,7 @@ class Player(GameObject):
 
 
         # check if directory
-        !unzip -q "/content/$data_path"
+        os.system('unzip -q "/content/$data_path"')
         print("Downloaded!")
 
         self.assets_loaded = True
