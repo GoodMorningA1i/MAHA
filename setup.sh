@@ -29,6 +29,10 @@ python3.10 ui_handler.py
 python3.10 camera.py
 python3.10 warehouse_brawl_env.py
 python3.10 other_game_objects.py
+python3.10 reward_configuration.py
+python3.10 save.py
+python3.10 self_play_warehouse_brawl.py
+python3.10 run_match.py
 
 cd ..
 
