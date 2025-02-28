@@ -1,3 +1,6 @@
+from enum import Enum
+import Agent
+
 class SaveHandlerMode(Enum):
     FORCE = 0
     RESUME = 1

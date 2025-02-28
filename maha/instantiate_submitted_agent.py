@@ -1,3 +1,6 @@
+import submitted_agent
+from submitted_agent import SubmittedAgent
+
 my_agent = SubmittedAgent()
 my_agent2 = SubmittedAgent()
 #my_agent = RecurrentPPOAgent('recurrent')

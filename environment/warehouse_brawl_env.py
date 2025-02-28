@@ -35,6 +35,8 @@ import skvideo
 import skvideo.io
 from IPython.display import Video
 
+import MalachiteEnv
+
 class Signal():
     def __init__(self, env):
         self._handlers: List[Callable] = []
