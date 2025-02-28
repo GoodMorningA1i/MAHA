@@ -48,5 +48,16 @@ cd ..
 
 # Submission Imports
 cd imports
-python3.10 submission_imports.py
+python3 submission_imports.py
+cd ..
+
+# Instantiate Submitted Agent
+cd maha
+python3 submitted_agent.py
+python3 instantiate_submitted_agent.py
+cd ..
+
+# UserInputAgent - Playing the game ourselves
+cd agents
+python3 user_input_agent.py
 cd ..
