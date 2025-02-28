@@ -1,4 +1,5 @@
 from enum import Enum
+import pymunk
 
 class CameraResolution(Enum):
     LOW = 1

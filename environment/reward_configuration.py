@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field, MISSING
-from typing import Callable
+from typing import Callable, Any
 import torch
 
 @dataclass

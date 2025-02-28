@@ -35,8 +35,8 @@ import skvideo
 import skvideo.io
 from IPython.display import Video
 
-import malachite
-from malachite import MalachiteEnv
+import ..malachite/malachite_env as malachite_env
+from malachite_env import MalachiteEnv
 import camera
 from camera import CameraResolution
 

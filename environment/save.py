@@ -1,5 +1,6 @@
 from enum import Enum
-import Agent
+import ..agents/agent_classes as agent_classes
+from agent_classes import Agent
 
 class SaveHandlerMode(Enum):
     FORCE = 0

@@ -1,5 +1,5 @@
 from stable_baselines3.common.monitor import Monitor
-import agent_classes
+import ..agents/agent_classes as agent_classes
 from agent_classes import Agent
 
 # We're using PPO by default, but feel free to experiment with other Stable-Baselines 3 algorithms!
