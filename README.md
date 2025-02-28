@@ -36,3 +36,6 @@ To activate the virtual environment, run `source env/bin/activate` in the termin
 To deactivate, run `deactivate`.
 
 ## Reward Functions
+
+## Skills Needed
+Python, API, Reinforcement Learning, Git-flow, DevOps and Rulesets, Pull Requests
