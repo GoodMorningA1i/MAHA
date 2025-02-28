@@ -27,5 +27,6 @@ python3.10 observation_space_helper.py
 python3.10 key_icon_panel.py
 python3.10 ui_handler.py
 python3.10 camera.py
+python3.10 warehouse_brawl_env.py
 
 cd ..
