@@ -22,7 +22,8 @@ cd ..
 cd environment
 
 # Low High Class
-python3 action_space_helper.py
-python3 observation_space_helper.py
+python3.10 action_space_helper.py
+python3.10 observation_space_helper.py
+python3.10 key_icon_panel.py
 
 cd ..
