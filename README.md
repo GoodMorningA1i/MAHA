@@ -38,4 +38,4 @@ To deactivate, run `deactivate`.
 ## Reward Functions
 
 ## Skills Needed
-Python & its packages, API, Reinforcement Learning, Git-flow, DevOps and Rulesets, Pull Requests, Linux and Shell Script, Virtual Environments
+Python and its packages, APIs, Reinforcement Learning, Git-flow, DevOps and Rulesets, Pull Requests, Linux and Shell Script, Virtual Environments
