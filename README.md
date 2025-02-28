@@ -4,7 +4,7 @@
 **Game:** Simplified Brawhala
 
 
-<img width="716" alt="Screenshot 2025-02-28 at 5 55 07 AM" src="https://github.com/user-attachments/assets/9a4171e3-bb51-421c-ad72-86d8f648350b" />
+<img width="708" alt="Screenshot 2025-02-28 at 5 57 13 AM" src="https://github.com/user-attachments/assets/76ad3df7-7ff2-411d-a3a8-a10ea67bb3ed" />
 
 
 
