@@ -18,6 +18,11 @@ cd malachite
 python3 malachite_env.py
 cd ..
 
+# Environment Imports
+cd imports
+python3.10 env_imports.py
+cd ..
+
 ## Environemnt Setup ##
 cd environment
 
@@ -39,4 +44,9 @@ cd ..
 # Agent Classes
 cd agents
 python3 agent_classes.py
+cd ..
+
+# Submission Imports
+cd imports
+python3.10 submission_imports.py
 cd ..
