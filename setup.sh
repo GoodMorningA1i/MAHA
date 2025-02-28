@@ -31,3 +31,8 @@ python3.10 warehouse_brawl_env.py
 python3.10 other_game_objects.py
 
 cd ..
+
+# Agent Classes
+cd agents
+python3 agent_classes.py
+cd ..
