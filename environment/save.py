@@ -1,6 +1,12 @@
 from enum import Enum
-import ..agents/agent_classes as agent_classes
-from agent_classes import Agent
+import sys
+import os
+
+# Get the project directory (one level up)
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(project_root)
+
+from agents.agent_classes import Agent
 
 class SaveHandlerMode(Enum):
     FORCE = 0

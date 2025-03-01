@@ -35,10 +35,17 @@ import skvideo
 import skvideo.io
 from IPython.display import Video
 
-import ..malachite/malachite_env as malachite_env
-from malachite_env import MalachiteEnv
 import camera
 from camera import CameraResolution
+
+import sys
+import os
+
+# Get the project directory (one level up)
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(project_root)
+
+from malachite.malachite_env import MalachiteEnv
 
 class Signal():
     def __init__(self, env):

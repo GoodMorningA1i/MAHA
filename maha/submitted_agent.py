@@ -1,11 +1,10 @@
-from stable_baselines3.common.monitor import Monitor
-from typing import Optional
-import numpy as np
-from sb3_contrib import RecurrentPPO
 import gdown
-
-import sys
+import numpy as np
 import os
+from sb3_contrib import RecurrentPPO # Importing an LSTM
+from stable_baselines3.common.monitor import Monitor
+import sys
+from typing import Optional
 
 # Get the project directory (one level up)
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))

@@ -38,6 +38,8 @@ from IPython.display import Video
 import camera
 from camera import Camera
 
+from warehouse_brawl_env import Facing
+
 class GameObject(ABC):
 
     def render(self, canvas: pygame.Surface, camera: Camera) -> None:
