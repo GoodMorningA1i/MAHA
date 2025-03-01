@@ -2,6 +2,7 @@
 
 **Team Name:** $\sqrt{\text{AI}^2}$\
 **Game:** Simplified Brawhala
+**Team members:** Ali Syed, Madhav Ajayamohan (Maddy), Adrian Lau, Hasnain Syed
 
 
 <img width="708" alt="Screenshot 2025-02-28 at 5 57 13 AM" src="https://github.com/user-attachments/assets/76ad3df7-7ff2-411d-a3a8-a10ea67bb3ed" />
