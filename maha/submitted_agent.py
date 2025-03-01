@@ -1,5 +1,13 @@
 from stable_baselines3.common.monitor import Monitor
-from ..agent_classes import Agent
+
+import sys
+import os
+
+# Get the project directory (one level up)
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(project_root)
+
+from agents.agent_classes import Agent
 
 # We're using PPO by default, but feel free to experiment with other Stable-Baselines 3 algorithms!
 class SubmittedAgent(Agent):
